@@ -58,6 +58,47 @@ export const work: WorkEntry[] = [
     ],
   },
   {
+    slug: "tegkit",
+    title: "tegkit",
+    role: "Author and maintainer",
+    org: "Open source (MIT license)",
+    period: "Since Nov 2026",
+    field: "Open-source software",
+    status: "Active",
+    hook: "A free Python toolkit for sizing thermoelectric generators from real datasheets. pip install tegkit.",
+    tools: ["Python", "pytest", "GitHub Actions", "PyPI"],
+    sections: [
+      {
+        heading: "Why I built it",
+        body: [
+          "Building ThermoVolt Marine meant answering the same questions again and again: how much power will this module give me at this temperature difference, what load should I put on it, and how much do my heat sinks cost me. I couldn't find a small, free tool that answered them straight from a datasheet, so I wrote one and opened it up.",
+        ],
+      },
+      {
+        heading: "What it does",
+        body: [
+          "It models thermoelectric generators and Peltier coolers with the standard constant-property model: power, efficiency, ZT, I-V curves, series and parallel arrays, and heat-sink sizing. It also has a command-line tool.",
+          "It ships with presets for five real modules. Each one is built from a public manufacturer datasheet and tested against that datasheet's own numbers.",
+          "Only general physics lives here. ThermoVolt's patent-pending design stays private.",
+        ],
+      },
+      {
+        heading: "Get involved",
+        body: [
+          "Install it with pip install tegkit. Issues labelled good first issue are open for new contributors.",
+        ],
+      },
+    ],
+    milestones: [
+      { date: "Nov 2026", iso: "2026-11-22", text: "Released tegkit 0.3.0 on PyPI.", href: "https://pypi.org/project/tegkit/" },
+    ],
+    links: [
+      { label: "Code on GitHub", href: "https://github.com/aysel-elsh/tegkit" },
+      { label: "tegkit on PyPI", href: "https://pypi.org/project/tegkit/" },
+    ],
+    photos: [],
+  },
+  {
     slug: "underwater-teleoperation",
     title: "Underwater robotics and XR teleoperation",
     role: "Undergraduate researcher",
@@ -140,8 +181,9 @@ export const notebook: NotebookEntry[] = [
   {
     title: "Low-power computing experiments",
     context: "Independent",
-    note: "Exploring probabilistic and thermodynamic approaches to computing, benchmarked on a Raspberry Pi with an INA219 measuring power draw.",
+    note: "Does probabilistic-bit (p-bit) sampling actually save energy? An open benchmark against a small neural network on a Raspberry Pi, with an INA219 measuring power draw. Results come once it runs on real hardware.",
     status: "Exploring",
+    href: "https://github.com/aysel-elsh/pbit-energy-bench",
   },
   {
     title: "FAU AI Sandbox",
