@@ -48,6 +48,7 @@ export type NotebookEntry = {
   context: string;
   note: string;
   status: Status;
+  href?: string;
 };
 
 export type Press = {
