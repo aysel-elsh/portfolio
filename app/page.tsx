@@ -56,6 +56,7 @@ const now = [
 const focus = ["Thermoelectrics", "Embedded hardware", "Medical devices", "Underwater robotics", "Neuroscience"];
 
 const lately: Milestone[] = [
+  { date: "Nov 2026", iso: "2026-11-22", text: "Released tegkit, my open-source Python toolkit for thermoelectric generators, on PyPI.", href: "/work/tegkit/" },
   { date: "Nov 2026", iso: "2026-11-16", text: "Filed a provisional patent for ThermoVolt Marine with the USPTO, on my own." },
   { date: "Nov 2026", iso: "2026-11", text: "Won a Youth Service America grant for an MLK Day film project with Speak Up for Kids chapters." },
   { date: "Oct 2026", iso: "2026-10", text: "Presented TideNet as a Guy Harvey Conservation Scholar finalist at Ocean Exchange." },
@@ -112,6 +113,11 @@ export default function Home() {
           {profile.linkedin && (
             <li>
               <TextLink href={profile.linkedin}>LinkedIn</TextLink>
+            </li>
+          )}
+          {profile.github && (
+            <li>
+              <TextLink href={profile.github}>GitHub</TextLink>
             </li>
           )}
           <li>
