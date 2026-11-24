@@ -1,16 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/newsreader";
-import "@fontsource-variable/newsreader/opsz-italic.css";
-import "@fontsource-variable/inter";
-import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/sofia-sans";
+import "@fontsource-variable/sofia-sans/wght-italic.css";
+import "@fontsource-variable/sofia-sans-condensed";
+import "@fontsource/b612-mono/400.css";
+import "@fontsource/b612-mono/700.css";
+import "@fontsource/caveat/600.css";
 import "./globals.css";
 import SiteRail from "@/components/SiteRail";
 import Colophon from "@/components/Colophon";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ayselelshenawy.com"),
   title: { default: "Aysel Elshenawy", template: "%s | Aysel Elshenawy" },
   description:
     "Electrical engineering student at Florida Atlantic University, founder of ThermoVolt Marine, and undergraduate researcher.",
+  openGraph: {
+    type: "website",
+    siteName: "Aysel Elshenawy",
+    title: "Aysel Elshenawy",
+    description: "I build hardware for problems nobody's looking at. Electrical engineering at FAU, founder of ThermoVolt Marine.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aysel Elshenawy",
+    description: "I build hardware for problems nobody's looking at. Electrical engineering at FAU, founder of ThermoVolt Marine.",
+  },
 };
 
 export const viewport: Viewport = {
