@@ -48,7 +48,6 @@ export type NotebookEntry = {
   context: string;
   note: string;
   status: Status;
-  href?: string;
 };
 
 export type Press = {
@@ -58,6 +57,8 @@ export type Press = {
   iso: string;
   note: string;
   href?: string;
+  /** A clipping pinned beside the entry. */
+  clip?: { src: string; alt: string };
 };
 
 export type AwardGroup = {
@@ -69,6 +70,7 @@ export type Role = {
   org: string;
   role: string;
   period: string;
+  hours?: string;
   summary: string;
   points: string[];
 };
@@ -76,6 +78,7 @@ export type Role = {
 export type Profile = {
   name: string;
   email: string;
+  phone?: string;
   linkedin?: string;
   github?: string;
   cvPdf?: string;
