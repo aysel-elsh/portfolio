@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { coursework, notebook, work } from "@/content/work";
 import WorkIndex from "@/components/WorkIndex";
-import { Block, PageHead, StatusMark, TextLink } from "@/components/ui";
+import { Block, PageHead, StatusMark } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Work" };
 
@@ -10,7 +10,7 @@ export default function WorkPage() {
     <>
       <PageHead
         title="Engineering and research"
-        standfirst="Energy hardware, open-source tools, robotics, medical devices and neuroscience. Each entry opens to what I built and where it stands."
+        standfirst="Energy hardware, robotics, medical devices and neuroscience. Each entry opens to what I built and where it stands."
       />
 
       <Block title="Entries" aside={`${work.length} with full write-ups`}>
@@ -28,11 +28,6 @@ export default function WorkPage() {
                 <h3 className="text-[16px] font-medium">{n.title}</h3>
                 <p className="meta mt-0.5">{n.context}</p>
                 <p className="mt-2 max-w-[36rem] text-[15px] leading-relaxed text-muted">{n.note}</p>
-                {n.href && (
-                  <p className="mt-2 text-[15px]">
-                    <TextLink href={n.href}>Code on GitHub</TextLink>
-                  </p>
-                )}
               </div>
               <div className="sm:pt-1 sm:text-right">
                 <StatusMark status={n.status} />
