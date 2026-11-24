@@ -11,7 +11,9 @@ export const nav = [
   { href: "/about/", label: "About" },
   { href: "/recognition/", label: "Recognition" },
   { href: "/community/", label: "Community" },
+  { href: "/open-source/", label: "Open source" },
   { href: "/cv/", label: "CV" },
+  { href: "/contact/", label: "Contact" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -19,28 +21,22 @@ function isActive(pathname: string, href: string) {
   return href === "/" ? p === "/" : p.startsWith(href);
 }
 
+/**
+ * Navigation drawn as a net on a board: every page is a pad on one trace.
+ * The current page's pad is filled copper and the trace up to it is lit.
+ */
 function NavList({ pathname, onNavigate }: { pathname: string; onNavigate?: () => void }) {
+  const current = nav.findIndex((n) => isActive(pathname, n.href));
   return (
-    <ul className="flex flex-col">
-      {nav.map((item) => {
-        const active = isActive(pathname, item.href);
+    <ul className="net" style={{ ["--lit" as string]: String(Math.max(current, 0)) }}>
+      {nav.map((item, i) => {
+        const active = i === current;
         return (
-          <li key={item.href}>
-            <Link
-              href={item.href}
-              onClick={onNavigate}
-              aria-current={active ? "page" : undefined}
-              className={`group flex items-center gap-3 py-2 text-[15px] transition-colors ${
-                active ? "text-ink" : "text-muted hover:text-accent"
-              }`}
-            >
-              <span
-                aria-hidden
-                className={`h-px transition-[width,background-color] duration-200 ${
-                  active ? "w-6 bg-accent" : "w-3 bg-hairline group-hover:w-6 group-hover:bg-accent"
-                }`}
-              />
-              {item.label}
+          <li key={item.href} className={`net-node${active ? " on" : ""}${i < current ? " passed" : ""}`}>
+            <Link href={item.href} onClick={onNavigate} aria-current={active ? "page" : undefined} className="net-link">
+              <span aria-hidden className="net-pad" />
+              <span className="net-label">{item.label}</span>
+              <span aria-hidden className="net-ref">TP{i + 1}</span>
             </Link>
           </li>
         );
@@ -57,6 +53,13 @@ function Contact() {
           {profile.email}
         </a>
       </li>
+      {profile.phone && (
+        <li>
+          <a className="ulink-static" href={`tel:+1${profile.phone.replace(/\D/g, "")}`}>
+            {profile.phone}
+          </a>
+        </li>
+      )}
       {profile.linkedin && (
         <li>
           <a className="ulink-static" href={profile.linkedin} rel="noopener">

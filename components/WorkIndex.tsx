@@ -16,7 +16,7 @@ export default function WorkIndex({ entries }: { entries: WorkEntry[] }) {
               <p className="meta">
                 {w.field} / {w.org}
               </p>
-              <h3 className="mt-1.5 font-serif text-[24px] font-[450] leading-tight tracking-[-0.01em] transition-colors group-hover:text-accent">
+              <h3 className="mt-1.5 font-serif text-[27px] font-[650] leading-tight tracking-[-0.01em] transition-colors group-hover:text-accent">
                 {w.title}
               </h3>
               <p className="mt-1.5 max-w-[36rem] text-[15px] leading-relaxed text-muted">{w.hook}</p>

@@ -14,11 +14,12 @@ export default function PressBoard({ items }: { items: Press[] }) {
           <span className="meta text-[11px]">AE-01 / Press</span>
           <span className="meta text-[11px]">Rev A</span>
         </div>
-        <ul className="chips">
+        <ul className="press-list">
           {items.map((p, i) => {
             const title = <span className="font-serif text-[23px] leading-[1.15] tracking-[-0.01em]">{p.title}</span>;
             return (
-              <li key={p.title} className="chip cat-press">
+              <li key={p.title} className="press-item">
+                <div className="chip cat-press">
                 <div className="flex items-baseline justify-between gap-3">
                   <span className="ref font-mono text-[12px]">J{i + 1}</span>
                   <time dateTime={p.iso} className="meta">
@@ -36,6 +37,14 @@ export default function PressBoard({ items }: { items: Press[] }) {
                   )}
                 </p>
                 <p className="mt-1.5 text-[14px] leading-snug text-muted">{p.note}</p>
+                </div>
+                {p.clip && (
+                  <figure className="press-clip" style={{ transform: `rotate(${[2, -1.5, 1.5][i % 3]}deg)` }}>
+                    <span aria-hidden className="press-pin" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.clip.src} alt={p.clip.alt} loading="lazy" decoding="async" />
+                  </figure>
+                )}
               </li>
             );
           })}

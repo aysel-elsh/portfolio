@@ -8,7 +8,8 @@ export default function PrintButton() {
         try {
           window.print();
         } catch {
-          /* printing blocked in some embedded viewers */
+          // Some embedded viewers block printing; the PDF link beside this button always works.
+          window.location.href = "/aysel-elshenawy-cv.pdf";
         }
       }}
       className="ulink-static cursor-pointer text-left"

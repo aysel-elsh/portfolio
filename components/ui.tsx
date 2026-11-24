@@ -13,11 +13,11 @@ export function PageHead({ title, standfirst, crumb }: { title: string; standfir
           </Link>
         </p>
       )}
-      <h1 className="font-serif text-[40px] font-[420] leading-[1.04] tracking-[-0.02em] sm:text-[52px]">
+      <h1 className="font-serif text-[48px] font-[700] leading-[0.98] tracking-[-0.015em] sm:text-[64px]">
         {title}
       </h1>
       {standfirst && (
-        <p className="mt-5 max-w-[34rem] font-serif text-[20px] leading-[1.45] text-muted sm:text-[22px]">
+        <p className="mt-5 max-w-[34rem] text-[19px] leading-[1.5] text-muted sm:text-[21px]">
           {standfirst}
         </p>
       )}
@@ -30,7 +30,7 @@ export function Block({ title, aside, children, id }: { title: string; aside?: R
   return (
     <section id={id} className="border-b border-hairline py-10 last:border-b-0 sm:py-12">
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-        <h2 className="font-serif text-[26px] font-[450] leading-tight tracking-[-0.01em]">{title}</h2>
+        <h2 className="font-serif text-[36px] font-[680] leading-[1.02] tracking-[-0.01em]">{title}</h2>
         {aside && <div className="meta">{aside}</div>}
       </div>
       {children}

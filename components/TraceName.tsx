@@ -83,7 +83,7 @@ export default function TraceName() {
         <button
           type="button"
           data-run=""
-          className="meta min-h-11 border border-ink px-3 text-ink transition-colors hover:border-accent hover:text-accent"
+          className="pill-btn"
         >
           Run continuity test
         </button>

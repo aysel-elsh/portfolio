@@ -12,6 +12,13 @@ export default function Colophon() {
                 {profile.email}
               </a>
             </li>
+            {profile.phone && (
+              <li>
+                <a className="ulink-static" href={`tel:+1${profile.phone.replace(/\D/g, "")}`}>
+                  {profile.phone}
+                </a>
+              </li>
+            )}
             {profile.linkedin && (
               <li>
                 <a className="ulink-static" href={profile.linkedin} rel="noopener">
@@ -22,7 +29,7 @@ export default function Colophon() {
           </ul>
         </div>
         <p className="text-muted sm:text-right">
-          Set in Newsreader, Inter and JetBrains Mono.
+          Set in Sofia Sans and B612 Mono, the typeface drawn for Airbus cockpit displays.
           <br />© {new Date().getFullYear()} {profile.name}
         </p>
       </div>
