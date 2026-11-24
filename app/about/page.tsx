@@ -31,13 +31,13 @@ const education = [
     when: "In progress",
     school: "Florida Atlantic University",
     degree: "B.S. Electrical Engineering, dual enrollment",
-    notes: ["118 credits completed, 26 in progress"],
+    notes: ["118 credits completed, 26 in progress", "GPA 3.85"],
   },
   {
     when: "Class of 2027",
     school: "FAU High School",
     degree: "Full-time dual enrollment",
-    notes: ["National Merit Commended Scholar"],
+    notes: ["GPA 3.95 unweighted, 5.45 weighted", "National Merit Commended Scholar"],
   },
 ];
 
@@ -80,8 +80,8 @@ export default function About() {
           I tend to pick problems that are easy to overlook: the heat a boat engine sends into the water, or the heart
           rhythms a short monitoring window misses. That led to{" "}
           <TextLink href="/work/thermovolt-marine/">ThermoVolt Marine</TextLink>, a thermoelectric system I designed,
-          tested and filed a patent on, and to hardware work on a wearable cardiac monitor at Aventusoft. Alongside
-          that, I do research in underwater robotics and neuroscience at FAU.
+          tested and filed a patent on, and to hardware work on a wearable cardiac monitor at Aventusoft. I've also
+          done research in underwater robotics and neuroscience at FAU.
         </p>
         <p className="flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
           <TextLink href="/cv/">Full CV</TextLink>
@@ -146,9 +146,8 @@ export default function About() {
 
       <Block title="Also">
         <dl className="border-t border-hairline">
-          <Row k="Languages">English and Arabic. I grew up in an Egyptian family and spoke Arabic before English.</Row>
-          <Row k="Speaking">Original Oratory, Speech and Debate</Row>
-          <Row k="Athletics">Varsity swim co-captain, FHSAA Class 2A state qualifier and placer</Row>
+          <Row k="Languages">English, Arabic</Row>
+          <Row k="Athletics">Varsity swimmer, FHSAA Class 2A state qualifier</Row>
         </dl>
       </Block>
     </>
