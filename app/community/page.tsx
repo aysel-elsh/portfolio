@@ -19,9 +19,11 @@ export default function Community() {
             className="grid grid-cols-1 gap-x-8 gap-y-2 border-b border-hairline py-8 sm:grid-cols-[minmax(0,5fr)_minmax(0,8fr)]"
           >
             <div>
-              <h2 className="font-serif text-[22px] font-[450] leading-snug tracking-[-0.005em]">{r.org}</h2>
+              <h2 className="font-serif text-[22px] font-[650] leading-snug tracking-[-0.005em]">{r.org}</h2>
               <p className="mt-1 text-[14px] leading-snug text-muted">{r.role}</p>
-              {r.period && <p className="meta mt-2">{r.period}</p>}
+              {(r.period || r.hours) && (
+                <p className="meta mt-2">{[r.period, r.hours].filter(Boolean).join(" / ")}</p>
+              )}
             </div>
             <div>
               <p className="text-[15px] leading-relaxed">{r.summary}</p>
