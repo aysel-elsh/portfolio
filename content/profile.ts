@@ -8,9 +8,11 @@ import type { Profile } from "@/lib/types";
 export const profile: Profile = {
   name: "Aysel Elshenawy",
   email: "aelshenawy2023@fau.edu",
+  phone: "561-825-6666",
+  // Replace with your profile URL, e.g. https://www.linkedin.com/in/your-handle
   linkedin: "https://www.linkedin.com/in/aysel-elshenawy/",
   github: "https://github.com/aysel-elsh",
-  cvPdf: undefined, // e.g. "/aysel-elshenawy-cv.pdf" once the file is in /public
+  cvPdf: "/aysel-elshenawy-cv.pdf",
   portrait: undefined,
   candid: undefined,
 };

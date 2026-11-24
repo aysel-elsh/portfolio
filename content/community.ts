@@ -7,6 +7,7 @@ export const roles: Role[] = [
     org: "Teen Coalition in Action",
     role: "President",
     period: "2026–27",
+    hours: "~300 hours",
     summary:
       "The youth arm of the Palm Beach County Behavioral Health Coalition, working on teen mental health and prevention. Member since middle school; treasurer, then secretary, now president.",
     points: [
@@ -17,15 +18,15 @@ export const roles: Role[] = [
   },
   {
     org: "Speak Up for Kids of Palm Beach County",
-    role: "Student Engagement Coordinator, Chapter Leader, Life Skills Portal lead",
+    role: "Lead intern, project creator and Life Skills Portal lead",
     period: "Fourth year",
+    hours: "561+ hours",
     summary:
       "Speak Up for Kids supports children in foster care. I work with student chapters at more than a dozen county schools that run projects for those kids.",
     points: [
       "Co-organized a 9/11 Day of Service where 100+ student volunteers assembled hurricane kits for foster families.",
       "Won a $1,000 Youth Service America grant for an MLK Day project where chapters make short films about kids in foster care.",
-      "Launched Write Right, a weekly virtual grammar series for middle schoolers taught by a student volunteer.",
-      "Run monthly newsletters, chapter competitions and the Music Buddies lesson program.",
+      "Run monthly newsletters and chapter competitions.",
     ],
   },
   {
@@ -62,9 +63,9 @@ export const roles: Role[] = [
   },
   {
     org: "FAU High School Swimming",
-    role: "Varsity co-captain",
+    role: "Varsity swimmer",
     period: "Since 2024",
-    summary: "Three seasons on varsity. FHSAA Class 2A state qualifier and placer.",
+    summary: "Three seasons on varsity. FHSAA Class 2A state qualifier.",
     points: [],
   },
 ];

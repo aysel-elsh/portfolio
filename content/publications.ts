@@ -23,7 +23,7 @@ export const publications: Publication[] = [
   {
     kind: "Patent",
     authors: "A. Elshenawy",
-    title: "ThermoVolt Marine thermoelectric waste-heat recovery system",
+    title: "Dual-Objective Control of Thermoelectric Waste-Heat Recovery on Marine Engine Cooling Circuits for Simultaneous Electrical Generation and Thermal Discharge Mitigation",
     venue: "U.S. provisional patent application, filed pro se. Sole inventor, 20 claims",
     date: "Nov 2026",
     iso: "2026-11-16",
@@ -77,16 +77,8 @@ export const publications: Publication[] = [
   {
     kind: "Journal",
     authors: "A. Elshenawy",
-    title: "Technical article from Stockholm Junior Water Prize research",
-    venue: "Florida Water Resources Journal, by invitation",
-    date: "",
-    status: "In preparation",
-  },
-  {
-    kind: "Paper",
-    authors: "A. Elshenawy",
-    title: "ThermoVolt Marine, IEEE-format paper",
-    venue: "Prepared for the MIT Undergraduate Research Technology Conference (URTC)",
+    title: "Dual-Objective Thermoelectric Waste-Heat Recovery for Thermal Discharge Mitigation in Marine Raw-Water Cooling Circuits",
+    venue: "Florida Water Resources Journal, by invitation of the Stockholm Junior Water Prize Florida state chair",
     date: "",
     status: "In preparation",
   },

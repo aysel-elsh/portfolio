@@ -10,7 +10,7 @@ export const work: WorkEntry[] = [
     field: "Energy hardware",
     status: "Active",
     hook: "Every boat engine dumps heat into the water it floats on. ThermoVolt catches some of it on the way out.",
-    tools: ["Thermoelectric modules", "KiCad", "Embedded systems", "3D CAD"],
+    tools: ["Thermoelectric modules", "KiCad", "LTC3119", "Portenta H7", "3D CAD"],
     diagram: "thermovolt",
     sections: [
       {
@@ -29,7 +29,7 @@ export const work: WorkEntry[] = [
       {
         heading: "What's next",
         body: [
-          "Custom power and control electronics, designed in KiCad, are headed to fabrication. The details stay private while the patent is pending.",
+          "Two custom boards in KiCad: Delta, a power stage built around the LTC3119 buck-boost converter, and Oasis, a compute node on the Portenta H7 for control and logging. Both are headed to fabrication.",
         ],
       },
     ],
@@ -58,90 +58,6 @@ export const work: WorkEntry[] = [
     ],
   },
   {
-    slug: "tegkit",
-    title: "tegkit",
-    role: "Author and maintainer",
-    org: "Open source (MIT license)",
-    period: "Since Nov 2026",
-    field: "Open-source software",
-    status: "Active",
-    hook: "A free Python toolkit for sizing thermoelectric generators from real datasheets. pip install tegkit.",
-    tools: ["Python", "pytest", "GitHub Actions", "PyPI"],
-    sections: [
-      {
-        heading: "Why I built it",
-        body: [
-          "Building ThermoVolt Marine meant answering the same questions again and again: how much power will this module give me at this temperature difference, what load should I put on it, and how much do my heat sinks cost me. I couldn't find a small, free tool that answered them straight from a datasheet, so I wrote one and opened it up.",
-        ],
-      },
-      {
-        heading: "What it does",
-        body: [
-          "It models thermoelectric generators and Peltier coolers with the standard constant-property model: power, efficiency, ZT, I-V curves, series and parallel arrays, and heat-sink sizing. It also has a command-line tool.",
-          "It ships with presets for five real modules. Each one is built from a public manufacturer datasheet and tested against that datasheet's own numbers.",
-          "Only general physics lives here. ThermoVolt's patent-pending design stays private.",
-        ],
-      },
-      {
-        heading: "Get involved",
-        body: [
-          "Install it with pip install tegkit. Issues labelled good first issue are open for new contributors.",
-        ],
-      },
-    ],
-    milestones: [
-      { date: "Nov 2026", iso: "2026-11-22", text: "Released tegkit 0.3.0 on PyPI.", href: "https://pypi.org/project/tegkit/" },
-    ],
-    links: [
-      { label: "Code on GitHub", href: "https://github.com/aysel-elsh/tegkit" },
-      { label: "tegkit on PyPI", href: "https://pypi.org/project/tegkit/" },
-    ],
-    photos: [],
-  },
-  {
-    slug: "underwater-teleoperation",
-    title: "Underwater robotics and XR teleoperation",
-    role: "Undergraduate researcher",
-    org: "FAU College of Engineering",
-    period: "Ongoing",
-    field: "Robotics",
-    status: "Ongoing",
-    hook: "Piloting an underwater robot with your head and hands instead of a joystick.",
-    tools: ["Meta Quest 3", "BlueROV2", "ROS", "Unity"],
-    diagram: "teleop",
-    sections: [
-      {
-        heading: "The work",
-        body: [
-          "I work on connecting a Meta Quest 3 spatial interface to a BlueROV2 underwater vehicle, so an operator can see and steer the robot from inside a mixed-reality scene.",
-          "The headset side runs in Unity and the vehicle side runs on ROS, so most of the work lives in the bridge between the two: getting commands down to the robot and the robot's state back up to the operator.",
-        ],
-      },
-    ],
-    photos: [],
-  },
-  {
-    slug: "neurodegenerative-clearance",
-    title: "Neurodegenerative clearance research",
-    role: "Research support",
-    org: "FAU Schmidt College of Medicine",
-    period: "Ongoing",
-    field: "Neuroscience",
-    status: "Ongoing",
-    hook: "How the brain clears amyloid-beta, the protein that builds up in Alzheimer's disease.",
-    tools: ["Amyloid-beta clearance", "Graduate symposium panel"],
-    sections: [
-      {
-        heading: "The work",
-        body: [
-          "Graduate-level lab support on a project investigating the mechanisms the brain uses to clear amyloid-beta. When clearance falls behind, the protein accumulates, which is one of the hallmarks of Alzheimer's disease.",
-          "I co-presented on a panel at the graduate research symposium.",
-        ],
-      },
-    ],
-    photos: [],
-  },
-  {
     slug: "aventusoft",
     title: "Medical device hardware",
     role: "Hardware engineering extern",
@@ -168,6 +84,49 @@ export const work: WorkEntry[] = [
     ],
     photos: [],
   },
+  {
+    slug: "underwater-teleoperation",
+    title: "Underwater robotics and XR teleoperation",
+    role: "Undergraduate researcher",
+    org: "FAU College of Engineering",
+    period: "Completed",
+    field: "Robotics",
+    status: "Completed",
+    hook: "Piloting an underwater robot with your head and hands instead of a joystick.",
+    tools: ["Meta Quest 3", "BlueROV2", "ROS", "Unity"],
+    diagram: "teleop",
+    sections: [
+      {
+        heading: "The work",
+        body: [
+          "I worked on connecting a Meta Quest 3 spatial interface to a BlueROV2 underwater vehicle, so an operator can see and steer the robot from inside a mixed-reality scene.",
+          "The headset side runs in Unity and the vehicle side runs on ROS, so most of the work lived in the bridge between the two: getting commands down to the robot and the robot's state back up to the operator.",
+        ],
+      },
+    ],
+    photos: [],
+  },
+  {
+    slug: "neurodegenerative-clearance",
+    title: "Neurodegenerative clearance research",
+    role: "Research support",
+    org: "FAU Schmidt College of Medicine",
+    period: "Completed",
+    field: "Neuroscience",
+    status: "Completed",
+    hook: "How the brain clears amyloid-beta, the protein that builds up in Alzheimer's disease.",
+    tools: ["Amyloid-beta clearance", "Graduate symposium panel"],
+    sections: [
+      {
+        heading: "The work",
+        body: [
+          "Graduate-level lab support on a project that investigated the mechanisms the brain uses to clear amyloid-beta. When clearance falls behind, the protein accumulates, which is one of the hallmarks of Alzheimer's disease.",
+          "I co-presented on a panel at the graduate research symposium.",
+        ],
+      },
+    ],
+    photos: [],
+  },
 ];
 
 /** Smaller entries that don't need their own page. */
@@ -181,9 +140,8 @@ export const notebook: NotebookEntry[] = [
   {
     title: "Low-power computing experiments",
     context: "Independent",
-    note: "Does probabilistic-bit (p-bit) sampling actually save energy? An open benchmark against a small neural network on a Raspberry Pi, with an INA219 measuring power draw. Results come once it runs on real hardware.",
+    note: "Exploring probabilistic and thermodynamic approaches to computing, benchmarked on a Raspberry Pi with an INA219 measuring power draw.",
     status: "Exploring",
-    href: "https://github.com/aysel-elsh/pbit-energy-bench",
   },
   {
     title: "FAU AI Sandbox",

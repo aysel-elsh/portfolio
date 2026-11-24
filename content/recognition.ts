@@ -7,6 +7,7 @@ export const press: Press[] = [
     date: "Sep 2026",
     iso: "2026-09",
     note: "Feature by Nila Do Simon on ThermoVolt Marine and turning marine waste heat into power.",
+    clip: { src: "/images/home/press-pbi.jpg", alt: "Palm Beach Illustrated headline: Turning the Tide" },
     // href: "https://…",  add the article link
   },
   {
@@ -15,13 +16,15 @@ export const press: Press[] = [
     date: "Sep 2026",
     iso: "2026-09",
     note: "Coverage of the Speak Up for Kids service day where 100+ students assembled hurricane kits for foster families.",
+    clip: { src: "/images/home/press-towncrier.jpg", alt: "Town-Crier page: local students build dozens of hurricane kits for foster families" },
   },
   {
     outlet: "FAU High School research blog",
-    title: "ThermoVolt Marine",
-    date: "2026",
-    iso: "2026",
-    note: "Student research write-up on the project.",
+    title: "FAUHS student profiled in Palm Beach Illustrated",
+    date: "Sep 2026",
+    iso: "2026-09-01",
+    note: "FAU High's research blog on the Palm Beach Illustrated profile and ThermoVolt Marine.",
+    clip: { src: "/images/home/press-fauhs.jpg", alt: "FAU High School research blog post about the Palm Beach Illustrated profile" },
   },
 ];
 
@@ -29,8 +32,8 @@ export const awards: AwardGroup[] = [
   {
     field: "Technical and research",
     items: [
-      { name: "National Green Difference Award", result: "Winner", detail: "Project Green Schools. One of 42 worldwide, honored at Columbia University.", year: "2026", feature: true },
-      { name: "Florida State Science and Engineering Fair", result: "Top Sustainability Innovation Award" },
+      { name: "National Green Difference Award", result: "Winner", detail: "Project Green Schools. One of 42 worldwide and 1 of 2 in Florida, honored at Columbia University.", year: "2026", feature: true },
+      { name: "Florida State Science and Engineering Fair", result: "Top Sustainability Innovation Award", detail: "Also placed 6th" },
       { name: "Palm Beach Regional Science and Engineering Fair", result: "First place", feature: true },
       { name: "Stockholm Junior Water Prize, Florida", result: "Third place", detail: "Paper invited for publication in the Florida Water Resources Journal." },
       { name: "Aventusoft", result: "Best Technical Excellence Award", detail: "Medical device hardware team" },
@@ -54,7 +57,6 @@ export const awards: AwardGroup[] = [
       { name: "National Merit Scholarship Program", result: "Commended Scholar" },
       { name: "HOSA Barbara James Service Award", result: "Gold" },
       { name: "Youth District Coalition Champion", result: "Recipient", detail: "Palm Beach County youth prevention work" },
-      { name: "CADCA", result: "Invited twice", detail: "Community Anti-Drug Coalitions of America" },
     ],
   },
 ];
