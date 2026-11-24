@@ -66,7 +66,7 @@ export default async function WorkEntryPage({ params }: Props) {
       <div className="max-w-[38rem]">
         {entry.sections.map((s) => (
           <section key={s.heading} className="mt-10 first:mt-8">
-            <h2 className="font-serif text-[24px] font-[450] leading-tight">{s.heading}</h2>
+            <h2 className="font-serif text-[27px] font-[650] leading-tight">{s.heading}</h2>
             <div className="prose-entry mt-3 text-[16px] leading-[1.7]">
               {s.body.map((p, k) => (
                 <p key={k}>{p}</p>
@@ -86,7 +86,7 @@ export default async function WorkEntryPage({ params }: Props) {
 
       {entry.milestones && (
         <section className="mt-12">
-          <h2 className="mb-4 font-serif text-[24px] font-[450] leading-tight">Record</h2>
+          <h2 className="mb-4 font-serif text-[27px] font-[650] leading-tight">Record</h2>
           <Ledger items={entry.milestones} />
         </section>
       )}
