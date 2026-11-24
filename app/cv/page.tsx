@@ -10,7 +10,7 @@ export const metadata: Metadata = { title: "CV" };
 
 function Row({ when, title, sub, children }: { when: string; title: string; sub?: string; children?: React.ReactNode }) {
   return (
-    <div className="grid grid-cols-1 gap-x-6 gap-y-1 border-b border-hairline py-4 sm:grid-cols-[8.5rem_minmax(0,1fr)]">
+    <div className="cv-row grid grid-cols-1 gap-x-6 gap-y-1 border-b border-hairline py-4 sm:grid-cols-[8.5rem_minmax(0,1fr)]">
       <p className="meta pt-[3px]">{when}</p>
       <div>
         <p className="text-[15px] font-medium leading-snug">{title}</p>
@@ -23,8 +23,8 @@ function Row({ when, title, sub, children }: { when: string; title: string; sub?
 
 function Part({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-10 break-inside-avoid-page">
-      <h2 className="border-b border-ink pb-2 font-serif text-[22px] font-[450]">{title}</h2>
+    <section className="cv-part mt-10">
+      <h2 className="border-b border-ink pb-2 font-serif text-[22px] font-[650]">{title}</h2>
       {children}
     </section>
   );
@@ -42,6 +42,13 @@ export default function CV() {
     <>
       <PageHead title="Curriculum vitae" standfirst={`${profile.name}. Electrical engineering, hardware, research.`} />
 
+      <p className="print-only cv-contact">
+        {profile.email}
+        {profile.phone && <> / {profile.phone}</>}
+        {profile.linkedin && <> / linkedin.com/in/aysel-elshenawy</>}
+        {profile.github && <> / github.com/aysel-elsh</>}
+      </p>
+
       <div className="no-print mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
         <PrintButton />
         {profile.cvPdf && <TextLink href={profile.cvPdf}>Download PDF</TextLink>}
@@ -50,10 +57,10 @@ export default function CV() {
 
       <Part title="Education">
         <Row when="In progress" title="Florida Atlantic University" sub="B.S. Electrical Engineering, dual enrollment">
-          118 credits completed, 26 in progress. Current: {coursework.now.join(", ")}.
+          118 credits completed, 26 in progress. GPA 3.85. Current: {coursework.now.join(", ")}.
         </Row>
         <Row when="Class of 2027" title="FAU High School" sub="Full-time dual enrollment">
-          National Merit Commended Scholar.
+          GPA 3.95 unweighted, 5.45 weighted. National Merit Commended Scholar.
         </Row>
       </Part>
 
@@ -66,7 +73,11 @@ export default function CV() {
       </Part>
 
       <Part title="Patents and publications">
-        <Row when="Nov 2026" title="Provisional patent application, ThermoVolt Marine" sub="USPTO, filed pro se. Sole inventor, 20 claims." />
+        <Row
+          when="Nov 2026"
+          title="Dual-Objective Control of Thermoelectric Waste-Heat Recovery on Marine Engine Cooling Circuits"
+          sub="U.S. provisional patent application, filed pro se. Sole inventor, 20 claims."
+        />
         <Row
           when="Nov 2026"
           title="Dual-Objective Control of Thermoelectric Waste-Heat Recovery in Marine Raw-Water Cooling Circuits"
@@ -74,7 +85,11 @@ export default function CV() {
         />
         <Row when="2026" title="ThermoVolt Marine preprint" sub="Zenodo" />
         <Row when="2026" title="Abstract, Sigma Xi IFoRE Student Awards" sub="Accepted" />
-        <Row when="In progress" title="Technical article" sub="Florida Water Resources Journal, by invitation" />
+        <Row
+          when="In progress"
+          title="Dual-Objective Thermoelectric Waste-Heat Recovery for Thermal Discharge Mitigation in Marine Raw-Water Cooling Circuits"
+          sub="Florida Water Resources Journal, by invitation of the Stockholm Junior Water Prize Florida state chair"
+        />
       </Part>
 
       <Part title="Awards">
@@ -85,7 +100,7 @@ export default function CV() {
 
       <Part title={`Leadership and service (${serviceHours} hours)`}>
         {roles.map((r) => (
-          <Row key={r.org} when={r.period} title={`${r.role}, ${r.org}`}>
+          <Row key={r.org} when={r.period} title={`${r.role}, ${r.org}`} sub={r.hours}>
             {r.summary}
           </Row>
         ))}
